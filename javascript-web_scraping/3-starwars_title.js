@@ -1,6 +1,13 @@
 #!/usr/bin/node
-const req = require('request');
-const url = `https://swapi-api.hbtn.io/api/films/${process.argv[2]}`;
-req.get(url, (err, res) => {
-  err ? console.log(err) : console.log(JSON.parse(res.body).title);
+const request = require('request');
+const movieId = process.argv[2];
+const url = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
+
+request.get(url, function (err, res, body) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  const movie = JSON.parse(body);
+  console.log(`${movie.title}`);
 });

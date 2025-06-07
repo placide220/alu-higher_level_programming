@@ -1,1 +1,3 @@
-This is a READMe file for javascript web scraping 
+Did web scraping with javascript
+
+Author Gilbmura.
